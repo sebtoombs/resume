@@ -126,13 +126,22 @@ const PortfolioImageWrapper = styled("span")(
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
-    {
-      kingsdesign: file(relativePath: { eq: "kingsdesign.portfolio.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+    fragment PortfolioImage on File {
+      childImageSharp {
+        fluid(maxWidth: 1000, maxHeight: 550, cropFocus: NORTH) {
+          ...GatsbyImageSharpFluid
         }
+      }
+    }
+    query {
+      kingsdesign: file(relativePath: { eq: "kingsdesign.portfolio.png" }) {
+        ...PortfolioImage
+      }
+      castella: file(relativePath: { eq: "castella.portfolio.png" }) {
+        ...PortfolioImage
+      }
+      sebtoombs: file(relativePath: { eq: "sebtoombs.portfolio.png" }) {
+        ...PortfolioImage
       }
     }
   `)
@@ -208,16 +217,24 @@ const IndexPage = () => {
       image: data.kingsdesign.childImageSharp.fluid,
       title: "KingsDesign.com.au",
       link: "https://www.kingsdesign.com.au",
+      tech: "Gatsbyjs (React, Node), Tailwindcss, Styled-components, Netlify",
+      desc:
+        "Collaboratively designed, then built this tasty piece for KingsDesign. This was my first taste of Gatsby for static site generation, so it's not perfect, but it's still a WIP (isn't everything?). Check it out.",
     },
     {
-      image: data.kingsdesign.childImageSharp.fluid,
-      title: "KingsDesign.com.au",
-      link: "https://www.kingsdesign.com.au",
+      image: data.castella.childImageSharp.fluid,
+      title: "Castella.com.au",
+      link: "https://www.castella.com.au",
+      tech: "Wordpress, custom theme, SASS, many bundles",
+      desc:
+        'A client site, this one was designed by a "design agency" and built with a page builder. I converted it to a custom theme and made some updates, with the ulitmate goal of improving load times.',
     },
     {
-      image: data.kingsdesign.childImageSharp.fluid,
-      title: "KingsDesign.com.au",
-      link: "https://www.kingsdesign.com.au",
+      image: data.sebtoombs.childImageSharp.fluid,
+      title: "Sebtoombs.com",
+      link: "https://sebtoombs.com",
+      tech: "Gatsbyjs (React, Node), Tailwindcss, Styled-components, Netlify",
+      desc: "My personal site. Whipped it together with Gatsby.",
     },
   ]
 
@@ -231,36 +248,70 @@ const IndexPage = () => {
       `}
     >
       <Box mb="8">
-        <a
-          css={`
-            display: block;
-          `}
-          href={item.link}
-          rel="nofollow noreferrer noopener"
-          target="_blank"
-        >
+        {item.link ? (
+          <a
+            css={`
+              display: block;
+            `}
+            href={item.link}
+            rel="nofollow noreferrer noopener"
+            target="_blank"
+          >
+            <PortfolioImageWrapper>
+              <Image fluid={item.image} />
+            </PortfolioImageWrapper>
+          </a>
+        ) : (
           <PortfolioImageWrapper>
             <Image fluid={item.image} />
           </PortfolioImageWrapper>
-        </a>
+        )}
       </Box>
       <Heading fontSize="xl" fontWeight="bold" mb="4">
-        <Link
-          href={item.link}
-          rel="nofollow noreferrer noopener"
-          target="_blank"
-        >
-          {item.title}
-        </Link>
+        {item.link ? (
+          <Link
+            href={item.link}
+            rel="nofollow noreferrer noopener"
+            target="_blank"
+          >
+            {item.title}
+          </Link>
+        ) : (
+          item.title
+        )}
       </Heading>
-      <Box display="flex">
-        <Text as="p" mr="4">
-          <strong>Tech:</strong>
-        </Text>
-        <Text as="p" color="primary">
-          Gatsbyjs (React, Node), Tailwindcss, Styled-components, Netlify
-        </Text>
-      </Box>
+      <table
+        css={`
+          width: 100%;
+        `}
+      >
+        <tbody>
+          <tr>
+            <td>
+              <Text as="p" mr="4" py="3">
+                <strong>Tech:</strong>
+              </Text>
+            </td>
+            <td>
+              <Text as="p" color="primary" py="3">
+                {item.tech}
+              </Text>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <Text as="p" mr="4" py="3">
+                <strong>About:</strong>
+              </Text>
+            </td>
+            <td>
+              <Text as="p" color="lightText" py="3">
+                {item.desc}
+              </Text>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   ))
 

@@ -2,7 +2,7 @@ import styled from "styled-components"
 import css from "@styled-system/css"
 import React from "react"
 
-import Container from "@components/container"
+import Container from "@components/Container"
 import Box from "@components/Box"
 
 const FooterStyled = styled("footer")(
