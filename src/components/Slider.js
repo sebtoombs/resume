@@ -105,7 +105,7 @@ export const Slider = ({ slides }) => {
 
   return (
     <>
-      <Box display="flex" pb="8">
+      <Box display="flex" pb="8" flexWrap="wrap">
         {slides.map((slide, _slideIndex) => (
           <NavButton
             key={_slideIndex}

@@ -143,6 +143,14 @@ const IndexPage = () => {
       sebtoombs: file(relativePath: { eq: "sebtoombs.portfolio.png" }) {
         ...PortfolioImage
       }
+      tasmania: file(relativePath: { eq: "tasmania.portfolio.png" }) {
+        ...PortfolioImage
+      }
+      insurancecheckup: file(
+        relativePath: { eq: "insurancecheckup.portfolio.png" }
+      ) {
+        ...PortfolioImage
+      }
     }
   `)
 
@@ -231,10 +239,25 @@ const IndexPage = () => {
     },
     {
       image: data.sebtoombs.childImageSharp.fluid,
-      title: "Sebtoombs.com",
+      title: "SebToombs.com",
       link: "https://sebtoombs.com",
       tech: "Gatsbyjs (React, Node), Tailwindcss, Styled-components, Netlify",
       desc: "My personal site. Whipped it together with Gatsby.",
+    },
+    {
+      image: data.insurancecheckup.childImageSharp.fluid,
+      title: "DPAC Insurance Checkup",
+      tech: "React, Sharepoint(!), styled-components",
+      desc:
+        "This little baby hasn't quite gone live yet... but it's a little app to guide Tasmanians through an insurance checkup, organised by the Department of Premier and Cabinet. Designed to fit in with the existing design, its built with React and pulls data from a Sharepoint instance.",
+    },
+    {
+      image: data.tasmania.childImageSharp.fluid,
+      title: "Tasmania.com",
+      link: "https://tasmania.com",
+      tech: "Wordpress, custom theme, SASS, jQuery",
+      desc:
+        "A big build of a travel affiliate site showcasing Tasmania. I was the lead developer with KingsDesign on this project, built on Wordpress with a couple of API integrations for travel providers.",
     },
   ]
 
@@ -439,7 +462,7 @@ const IndexPage = () => {
               heading1="Work &amp; Education"
               heading2="Professional experience"
             />
-            <Box mx="auto" width={[1, 1, 1 / 2]} py="12">
+            <Box mx="auto" width={[1, 1, 2 / 3, 1 / 2]}>
               {experienceCards.map((exp, index) => (
                 <Box
                   key={index}
