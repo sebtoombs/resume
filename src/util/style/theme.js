@@ -49,9 +49,22 @@ const lightTheme = {
   lightText: baseColors.gray[`600`],
   accent: baseColors.teal[`300`],
   footerBackground: baseColors.indigo[`900`],
+  cardBackground: baseColors.white,
 }
 
-const colors = { ...baseColors, ...lightTheme }
+const darkTheme = {
+  pageBackground: baseColors.indigo[`900`],
+  text: baseColors.gray[`100`],
+  textContrast: baseColors.black,
+  primary: baseColors.indigo[`300`],
+  primaryDarker: baseColors.indigo[`200`],
+  lightText: baseColors.gray[`400`],
+  accent: baseColors.pink[`700`],
+  footerBackground: baseColors.indigo[`800`],
+  cardBackground: baseColors.gray[`900`],
+}
+
+const colors = { ...baseColors, ...lightTheme, modes: { dark: darkTheme } }
 
 /**
  * Space is used for margin and padding scales.

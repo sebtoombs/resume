@@ -5,7 +5,7 @@ import css from "@styled-system/css"
 
 const Card = styled("div")(
   css({
-    bg: "white",
+    bg: "cardBackground",
     borderRadius: "sm",
     paddingX: 4,
     paddingY: 5,

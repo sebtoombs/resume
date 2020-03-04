@@ -183,18 +183,18 @@ const IndexPage = () => {
 
   const skills = [
     <Text>
-      <strong>Semantic</strong> HTML
+      <strong>Semantic</strong> HTML.
     </Text>,
     <Text>
       Great working knowledge of MYSQL <strong>databases</strong>. DynamoDB
       &amp; MongoDB experience.
     </Text>,
     <Text>
-      <strong>CSS</strong>, CSS-in-JS, CSS pre &amp; post processing
+      <strong>CSS</strong>, CSS-in-JS, CSS pre &amp; post processing.
     </Text>,
     <Text>
       Vanilla <strong>Javascript</strong> - Yeah I could write an app without a
-      framework. I also know enough not to.
+      framework. I probably wouldn’t.
     </Text>,
     <Text>
       git commit -m "I love to use <strong>git</strong> for vcs"
@@ -202,21 +202,21 @@ const IndexPage = () => {
     <Text>
       Javascript <strong>frameworks & libraries</strong>. I can build an app
       with React, Vue and I’ll give anything a go. I also have an unfortunate
-      amount of experience with jQuery
+      amount of experience with jQuery.
     </Text>,
     <Text>
       I don’t claim to be a visual designer, but I have a good{" "}
       <strong>eye for detail</strong> and I usually have a good feel for what
-      works
+      works.
     </Text>,
     <Text>
       I’ve got extensive Wordpress experience, but I don’t like to talk about
       it. I also love headless <strong>CMS</strong>es (Sanity.io, Netlify CMS,
-      TinaCMS are some of my faves)
+      TinaCMS are some of my faves).
     </Text>,
     <Text>
       <strong>Performance</strong> optimisation. I'm pretty handy at making
-      sites load and feel fast
+      sites load and feel fast.
     </Text>,
   ]
 

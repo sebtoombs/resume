@@ -7,6 +7,7 @@ import Box from "@components/Box"
 
 import { GoMarkGithub } from "react-icons/go"
 import { FaTwitter } from "react-icons/fa"
+import ThemeToggle from "@components/ThemeToggle"
 
 const HeaderStyled = styled.div`
   ${css({

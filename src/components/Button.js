@@ -30,7 +30,7 @@ const Button = styled("button")(
   variant({
     variants: {
       primary: {
-        color: "white",
+        color: "textContrast",
         bg: "primary",
         borderColor: "primary",
         "&:hover": {
