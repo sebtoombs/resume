@@ -8,7 +8,7 @@ import Box from "@components/Box"
 const FooterStyled = styled("footer")(
   css({
     bg: "footerBackground",
-    color: "textContrast",
+    color: "white",
     py: 12,
   })
 )

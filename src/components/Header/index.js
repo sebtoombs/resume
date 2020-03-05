@@ -44,6 +44,9 @@ const Header = ({ children, ...props }) => {
     <HeaderStyled>
       <Container>
         <Box display="flex" alignItems="center">
+          <Box>
+            <ThemeToggle />
+          </Box>
           <HeaderRight>
             <HeaderButton
               as="a"

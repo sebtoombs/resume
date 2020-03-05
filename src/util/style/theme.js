@@ -1,7 +1,7 @@
 /* eslint-disable prefer-destructuring */
 
 const defaultTheme = require("tailwindcss/defaultTheme")
-console.log(defaultTheme)
+//console.log(defaultTheme)
 
 //Map and alias a tailwind config property to a styled-system compatible object
 const tailwindToStyledSystem = (twConfigObject, { alias = true } = {}) => {

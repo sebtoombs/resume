@@ -3,7 +3,7 @@ import Switch from "./Switch"
 import sun from "../images/sun.png"
 import moon from "../images/moon.png"
 
-import { ColorModeContext, useColorMode } from "@style"
+import { useColorMode } from "@style/ColorMode"
 import React, { useContext } from "react"
 
 const iconCss = [{ pointerEvents: `none`, margin: "4px" }]
@@ -31,7 +31,7 @@ const uncheckedIcon = (
 )
 
 const ThemeToggle = props => {
-  const { colorMode, setColorMode } = {}
+  const { colorMode, setColorMode } = useColorMode()
 
   const toggleColorMode = () => {
     setColorMode(colorMode === "dark" ? "light" : "dark")

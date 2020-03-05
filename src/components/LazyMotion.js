@@ -22,7 +22,7 @@ const LazyMotion = ({ delay = 0, once = false, ...props }) => {
   }, [inView])
 
   useOnBeforePrint(() => {
-    console.log("print!")
+    //console.log("print!")
     setShouldAnimate(true)
   })
 

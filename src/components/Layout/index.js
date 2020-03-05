@@ -6,23 +6,18 @@ import GlobalStyles from "@style/GlobalStyles"
 import { ThemeProvider, theme as baseTheme } from "@style"
 import Footer from "@components/Footer"
 
-const getTheme = mode => {
-  if (mode === `light`) return baseTheme
-  return { ...baseTheme, colors: baseTheme.colors.modes[mode] }
-}
+import { ColorModeProvider } from "@style/ColorMode"
 
 const Layout = ({ children }) => {
-  const theme = getTheme("light")
-
   return (
-    <ThemeProvider theme={theme}>
+    <ColorModeProvider>
       <>
         <GlobalStyles bg="pageBackground" color="text" fontFamily="body" />
         <Header />
         {children}
         <Footer />
       </>
-    </ThemeProvider>
+    </ColorModeProvider>
   )
 }
 
