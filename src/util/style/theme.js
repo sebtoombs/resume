@@ -64,7 +64,22 @@ const darkTheme = {
   cardBackground: baseColors.gray[`900`],
 }
 
-const colors = { ...baseColors, ...lightTheme, modes: { dark: darkTheme } }
+const pinkTheme = {
+  pageBackground: baseColors.pink[`200`],
+  text: baseColors.black,
+  textContrast: baseColors.pink[`100`],
+  primary: baseColors.pink[`700`],
+  primaryDarker: baseColors.purple[`700`],
+  lightText: baseColors.purple[`700`],
+  accent: baseColors.yellow[`300`],
+  cardBackground: baseColors.pink[`100`],
+}
+
+const colors = {
+  ...baseColors,
+  ...lightTheme,
+  modes: { dark: darkTheme, pink: pinkTheme },
+}
 
 /**
  * Space is used for margin and padding scales.
