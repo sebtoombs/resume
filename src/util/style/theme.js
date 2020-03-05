@@ -50,6 +50,7 @@ const lightTheme = {
   accent: baseColors.teal[`300`],
   footerBackground: baseColors.indigo[`900`],
   cardBackground: baseColors.white,
+  footerColor: baseColors.white,
 }
 
 const darkTheme = {
@@ -62,6 +63,7 @@ const darkTheme = {
   accent: baseColors.pink[`700`],
   footerBackground: baseColors.indigo[`800`],
   cardBackground: baseColors.gray[`900`],
+  footerColor: baseColors.indigo[`200`]
 }
 
 const pinkTheme = {
@@ -73,6 +75,8 @@ const pinkTheme = {
   lightText: baseColors.purple[`700`],
   accent: baseColors.yellow[`300`],
   cardBackground: baseColors.pink[`100`],
+  footerBackground: baseColors.pink[`300`],
+  footerColor: baseColors.pink[`600`],
 }
 
 const colors = {
