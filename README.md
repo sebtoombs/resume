@@ -29,3 +29,5 @@ Also there are zero tests.
 - Find an excuse to add some SVG path animations
 - Add more themes?
 - Add reduced motion toggle
+- Make print mode nicer
+- Toggle theme to light before print & back after
