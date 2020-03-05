@@ -10,6 +10,7 @@ module.exports = {
     siteUrl: "https://resume.sebtoombs.com",
   },
   plugins: [
+    `gatsby-plugin-preact`,
     {
       resolve: `gatsby-plugin-hotjar`,
       options: {
