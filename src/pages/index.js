@@ -134,6 +134,9 @@ const IndexPage = () => {
       }
     }
     query {
+      hillsthome: file(relativePath: { eq: "hillsthome.portfolio.png" }) {
+        ...PortfolioImage
+      }
       kingsdesign: file(relativePath: { eq: "kingsdesign.portfolio.png" }) {
         ...PortfolioImage
       }
@@ -221,6 +224,15 @@ const IndexPage = () => {
   ]
 
   const portfolioData = [
+    {
+      image: data.hillsthome.childImageSharp.fluid,
+      title: "Hill Street Home",
+      link: "https://home.hillstreetgrocer.com",
+      tech:
+        "Wordpress, Woocommerce, but with modern dev workflows (blade templates, webpack...)",
+      desc:
+        "Very non-traditional Wordpress + Woocommerce with a distinctly single page app feel... Custom theme built with Roots/Sage and Barba.js",
+    },
     {
       image: data.kingsdesign.childImageSharp.fluid,
       title: "KingsDesign.com.au",

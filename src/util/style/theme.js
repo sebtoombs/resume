@@ -63,7 +63,7 @@ const darkTheme = {
   accent: baseColors.pink[`700`],
   footerBackground: baseColors.indigo[`800`],
   cardBackground: baseColors.gray[`900`],
-  footerColor: baseColors.indigo[`200`]
+  footerColor: baseColors.indigo[`200`],
 }
 
 const pinkTheme = {
